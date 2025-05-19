@@ -1,9 +1,9 @@
 "use client"
-import { Radio } from "@/utils/radio"
+import dynamic from 'next/dynamic'
 import { ResponseInfo } from "@/utils/type"
 import { useEffect, useState } from "react"
+const Player = dynamic(() => import("@/utils/radio"), { ssr: false })
 
-const Player = Radio.runPlaylist()
 const thumbnail = "https://platform-static.cdn.mdstrm.com/player/thumbnail/65b2c7a48ef3403a8737a39c.png"
 
 export default function () {
